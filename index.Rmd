@@ -7,7 +7,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Nature cognition and creativity
+## Nature cognition and creativity  
+ ![](./nature.jpg)
 
 ### Data
 ```{r data, warning=FALSE, message=FALSE}
