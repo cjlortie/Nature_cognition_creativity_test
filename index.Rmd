@@ -10,11 +10,20 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Nature cognition and creativity  
  ![](./nature.jpg)
 
-### Data
+### Data  
+The [30-circle visual creativity test](https://www.ideo.com/blog/build-your-creative-confidence-thirty-circles-exercise) was used to explore the influence of a short, defocussed nature experience. A sheet with 30 empty circles was provided to each participant. Instructions were provided. Specifically, turn each circle into a picture, as many as you can, within one minute. The test was adminstered to a total of 20 participants before and after a timed 10-minute walk outside in a [greyfield](https://en.wikipedia.org/wiki/Greyfield_land) open space. It was 60F and sunny on January 11, 2020. Participants were encouraged to wander, do quiet exploration, or examine nature. Testing was done indoors pre and post intervention. Participants also provided an estimate of the total duration spent outdoors from Monday to Friday weekly. The total number of circles completed in each was recorded by CJL. The creativity of each sheet was then assigned a composite score using a Likert Scale from 1 to 5. A score of 1 being limited creativity and 5 being exceptionally creative. Creativity was assessed based on concept, effective circle use, detail, and the extent that each picture communicated a concept. No respondent identity attributes were recorded.      
+
+![](./pics/30_circles.jpg)  
+
 ```{r data, warning=FALSE, message=FALSE}
 library(tidyverse)
 data <-  read_csv("data/data.csv")
 wide_data <- data %>%
   pivot_wider(names_from = treatment, values_from = c(n_circles, creativity_score))
+
+wide_data <- wide_data %>%
+  mutate(relative_difference_n = (n_circles_after - n_circles_before)/(n_circles_after + n_circles_before), relative_difference_creativity = (creativity_score_after - creativity_score_before)/(creativity_score_after + creativity_score_before)) 
+
+data
 
 ```

@@ -32,8 +32,10 @@ rep,duration_outside,treatment,n_circles,creativity_score
 16,10,before,11,3
 16,10,after,17,3
 17,5,before,14,3
-18,5,after,22,3
-19,10,before,11,3
-19,10,after,16,3
-20,2,before,4,3
-20,2,after,6,4
+17,5,after,22,3
+18,10,before,11,3
+18,10,after,16,3
+19,2,before,4,3
+19,2,after,6,4
+20,6,before,15,4
+20,6,after,25,5
